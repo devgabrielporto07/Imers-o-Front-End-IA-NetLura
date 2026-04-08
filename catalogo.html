@@ -1,276 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SteamFlix - Catálogo de Jogos">
-    <title>SteamFlix - Catálogo</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-blue: #1a3a52;
-            --secondary-blue: #1e90ff;
-            --accent-blue: #00d4ff;
-            --dark-bg: #0a0e27;
-            --card-bg: #162038;
-            --text-primary: #ffffff;
-            --text-secondary: #b0b8c1;
-            --transition: all 0.3s ease;
-        }
-
-        body.light-theme {
-            --primary-blue: #e8f4f8;
-            --secondary-blue: #1e90ff;
-            --accent-blue: #0088cc;
-            --dark-bg: #f5f5f5;
-            --card-bg: #ffffff;
-            --text-primary: #1a1a1a;
-            --text-secondary: #555555;
-        }
-
-        body {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a2a3a 100%);
-            color: var(--text-primary);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition);
-        }
-
-        body.light-theme {
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #e0e0e0 100%);
-        }
-
-        .top-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 2rem;
-            background: linear-gradient(to right, var(--primary-blue), rgba(30, 144, 255, 0.1));
-            border-bottom: 2px solid var(--secondary-blue);
-            box-shadow: 0 4px 20px rgba(30, 144, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .header-left {
-            flex: 1;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            letter-spacing: 3px;
-            background: linear-gradient(135deg, var(--accent-blue), var(--secondary-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .header-center {
-            flex: 2;
-            text-align: center;
-        }
-
-        .header-center h2 {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .header-right {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            gap: 1rem;
-        }
-
-        .perfil-info {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            background: var(--card-bg);
-            padding: 0.8rem 1.2rem;
-            border-radius: 8px;
-            border: 2px solid var(--secondary-blue);
-        }
-
-        .perfil-info img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .perfil-nome {
-            font-weight: 600;
-            color: var(--accent-blue);
-        }
-
-        .btn-voltar {
-            background: var(--secondary-blue);
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            color: white;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .btn-voltar:hover {
-            background: var(--accent-blue);
-            transform: scale(1.05);
-        }
-
-        main {
-            flex: 1;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .catalyst-message {
-            background: var(--card-bg);
-            padding: 3rem;
-            border-radius: 12px;
-            border: 2px solid var(--secondary-blue);
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-        }
-
-        .catalyst-message h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent-blue);
-        }
-
-        .catalyst-message p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        footer {
-            background: var(--primary-blue);
-            padding: 2rem;
-            text-align: center;
-            border-top: 2px solid var(--secondary-blue);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .top-header {
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-
-            .header-right {
-                flex: 1 1 100%;
-                justify-content: center;
-            }
-
-            main {
-                padding: 2rem 1rem;
-            }
-
-            .catalyst-message {
-                padding: 2rem;
-            }
-
-            .catalyst-message h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <title>Steam Flix - Catálogo</title>
+    <link rel="stylesheet" href="catalogo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header class="top-header">
-        <div class="header-left">
-            <h1 class="logo">STEAMFLIX</h1>
-        </div>
-        <div class="header-center">
-            <h2>Catálogo Personalizado</h2>
-        </div>
-        <div class="header-right">
-            <div class="perfil-info">
-                <img id="perfilImg" src="" alt="Perfil">
-                <span class="perfil-nome" id="perfilNome">Carregando...</span>
+    <!-- Navbar com Logo Steam Flix e Botão de Tema -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-left">
+            <!-- Logo Steam Flix com estilo similar ao do projeto principal -->
+            <div class="logo" id="logoBtn" title="Voltar aos Perfis">
+                <span class="logo-steam">STEAM</span>
+                <span class="logo-flix">FLIX</span>
             </div>
-            <button class="btn-voltar" onclick="voltarParaSelecao()">← Voltar</button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Início</a></li>
+                    <li><a href="#séries">Séries</a></li>
+                    <li><a href="#maratonas">Maratonas</a></li>
+                    <li><a href="#jogos">Jogos Steam</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <!-- Botão de Tema Escuro/Claro -->
+            <button class="theme-toggle" id="themeToggle" title="Alternar Tema">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+            </button>
+            <!-- Nome do Perfil -->
+            <span class="perfil-nome" id="perfilNome">Pedro</span>
+            <!-- Menu de Perfil com voltar -->
+            <a href="#" class="profile-menu" id="profileMenu" title="Sair">
+                <img class="profile-icon" id="profileIcon" src="" alt="Perfil">
+                <i class="fas fa-caret-down icon" style="font-size: 14px; margin-left: 5px;"></i>
+            </a>
         </div>
     </header>
 
-    <main>
-        <section class="catalyst-message">
-            <h1>🎮 Bem-vindo ao Catálogo!</h1>
-            <p id="perfilMensagem">Carregando dados do perfil...</p>
-            <p style="margin-top: 2rem; font-size: 1rem; color: var(--text-secondary);">
-                Esta é a página de catálogo. Em breve mais conteúdo! 🚀
-            </p>
-        </section>
+    <!-- Container Principal com Carrosséis -->
+    <main class="sliders-container" id="main-content">
+        <!-- JavaScript injetará as categorias aqui -->
     </main>
 
+    <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 SteamFlix - Imersão ALURA Front-End | Todos os direitos reservados</p>
+        <div class="footer-content">
+            <p>&copy; 2024 Steam Flix - Imersão Alura AI</p>
+            <ul class="footer-links">
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Privacidade</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
     </footer>
 
-    <script>
-        /**
-         * CATALOGO.JS
-         * Página de catálogo que recebe dados do perfil selecionado
-         */
-
-        // Carregar dados do perfil do localStorage
-        function carregarPerfil() {
-            const nomePerfil = localStorage.getItem('perfilAtivoNome');
-            const imagemPerfil = localStorage.getItem('perfilAtivoImagem');
-
-            const perfilNome = document.getElementById('perfilNome');
-            const perfilImg = document.getElementById('perfilImg');
-            const perfilMensagem = document.getElementById('perfilMensagem');
-
-            if (nomePerfil && imagemPerfil) {
-                perfilNome.textContent = nomePerfil;
-                perfilImg.src = imagemPerfil;
-                perfilMensagem.textContent = `Você está no catálogo de ${nomePerfil}. Explore os melhores jogos!`;
-                console.log(`✓ Perfil "${nomePerfil}" carregado no catálogo`);
-            } else {
-                perfilMensagem.textContent = 'Erro ao carregar perfil. Volte e selecione novamente.';
-                console.warn('⚠ Dados do perfil não encontrados no localStorage');
-            }
-        }
-
-        // Função para voltar à seleção de perfis
-        function voltarParaSelecao() {
-            window.location.href = 'index.html';
-        }
-
-        // Sincronizar tema com a página anterior
-        function sincronizarTema() {
-            const tema = localStorage.getItem('steamflix-theme');
-            if (tema === 'light') {
-                document.body.classList.add('light-theme');
-            }
-        }
-
-        // Ao carregar a página
-        window.addEventListener('DOMContentLoaded', () => {
-            sincronizarTema();
-            carregarPerfil();
-            console.log('✓ Catálogo carregado com sucesso');
-        });
-    </script>
+    <!-- Scripts modulares para gerenciar o catálogo -->
+    <script type="module" src="js/main.js"></script>
 </body>
+
 </html>
