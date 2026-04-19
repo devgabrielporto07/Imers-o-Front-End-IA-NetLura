@@ -3,6 +3,12 @@
 ## 📋 Visão Geral
 
 O **Steam Flix** é a página de inicialização que permite ao usuário escolher entre dois perfis (**Pedro** ou **Ana**). Integra um sistema de tema escuro/claro e redireciona para catálogos personalizados.
+## Acesse o Projeto 🚀
+👉 [Clique aqui para ver online](https://devgabrielporto07.github.io/Imers-o-Front-End-IA-NetLura/)
+
+## 📸 Preview
+<img width="1920" height="935" alt="{8871D4B7-C3DB-4AAC-9B2F-91375CF75FC5}" src="https://github.com/user-attachments/assets/b016f687-0d74-4678-9d10-646eeeb0d557" />
+<img width="1920" height="935" alt="{2BC60F45-3B82-48AE-BFEF-E5F90436B704}" src="https://github.com/user-attachments/assets/11356b41-f2a1-48c9-923e-7d97a9842221" />
 
 ---
 
